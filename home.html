@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Styles/Header.css">
+    <link rel="stylesheet" href="Styles/Images.css">
+    <link rel="stylesheet" href="Styles/Banner.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <title>AeroVenture</title>
+</head>
+<body>
+    <!-- Header -->
+    <div class="banner-grid">
+    <div class="banner"> 
+    <!-- Banner Images -->
+        <img src="images/banner-2.jpg" class="active">
+        <img src="images/banner-lativa.jpg">
+        <img src="images/banner-3.jpg">
+        <nav>
+            <div class="toggle">
+                <a href="#"><ion-icon name="menu-outline"></ion-icon></a>
+            </div>
+            <div class="logo">
+                <a href="#"><ion-icon name="navigate-circle-outline"></ion-icon>AeroVenture</a>
+            </div>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="registration.html">Account</a></li>
+            </ul>
+        </nav>
+    <!-- Search Bar -->
+        <div class="banner-content">
+            <form class="search-bar">
+                <input type="text" placeholder="Search destinations..." name="search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+    </div>
+    <!-- Destinations -->
+    <div class="video-grid"> 
+        <div class="video-preview">
+            <div class="thumbnail-row">
+                <img class="thumbnail" src="images/himalaya-nepal.jpg" alt="">
+                <div class="offers">
+                    20% OFF
+                </div>
+            </div>
+            <div class="video-info-grid">
+            <div class="video-info">
+                <p class="video-title">
+                    Nepal
+                </p>
+                <p class="video-author">
+                    Himalayas
+                </p>
+                <div class="video-status-row">
+                    <p class="video-status">
+                    The Himalayas is the highest mountain range in the world, and has 9 out of 10 of the world's highest peaks.
+                    </p>
+                </div>
+            
+            </div>
+            </div>
+        </div>
+        <div class="video-preview">
+            <div class="thumbnail-row">
+                <img class="thumbnail" src="images/italy-1.jpg" alt="">
+            </div>
+            <div class="video-info-grid">
+            <div class="video-info">
+                <p class="video-title">
+                    Rome, Italy
+                
+                </p>
+                <p class="video-author">
+                    Colosseum
+                </p>
+                <div>
+                    <p class="video-status">
+                    The Colosseum is famous for being one of the greatest works of Roman architecture and engineering.
+                    </p>
+                </div>
+                
+            </div>
+            </div>
+        </div>
+        <div class="video-preview">
+            <div class="thumbnail-row">
+                <img class="thumbnail" src="images/london.jpg" alt="">
+                <div class="offers">
+                    10% OFF
+                </div>
+            </div>
+            <div class="video-info-grid">
+            <div class="video-info">
+                <p class="video-title">
+                    London
+                </p>
+                <p class="video-author">
+                    England,UK
+                </p>
+                <div class="video-status-row">
+                    <p class="video-status">
+                    London is the capital and largest city of both England and the United Kingdom.
+                    </p>
+                </div>
+                
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner Slide Script -->
+    <script>
+        let images = document.querySelectorAll('.banner img');
+        let current = 0;
+
+        function changeImage() {
+            images[current].classList.remove('active');
+            current = (current + 1) % images.length;
+            images[current].classList.add('active');
+        }
+
+        setInterval(changeImage, 3500);
+    </script>
+
+     <!-- Responsive Menu Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+          $(".toggle").on("click",function(){
+
+            if($(".menu").hasClass("active")){
+              $(".menu").removeClass("active"); 
+              $(this).find("a").html("<ion-icon name='menu-outline'></ion-icon>");               
+            }else{
+                $(".menu").addClass("active");
+                $(this).find("a").html("<ion-icon name='close-outline'></ion-icon>");
+            }
+          });
+        });
+    </script>
+</body>
+</html>
